@@ -443,12 +443,28 @@ namespace Simple.OData.Client
         /// </summary>
         /// <returns>Action execution result.</returns>
         Task<IEnumerable<T>> ExecuteAsEnumerableAsync();
+
         /// <summary>
         /// Executes the OData function or action and returns collection.
         /// </summary>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>Execution result.</returns>
         Task<IEnumerable<T>> ExecuteAsEnumerableAsync(CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Executes the OData function or action and returns collection.
+        /// </summary>
+        /// <param name="annotations">The OData feed annotations.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>Execution result.</returns>
+        Task<IEnumerable<T>> ExecuteAsEnumerableAsync(ODataFeedAnnotations annotations, CancellationToken cancellationToken);
+
+        /// <summary>
+        /// Executes the OData function or action and returns collection.
+        /// </summary>
+        /// <param name="annotations">The OData feed annotations.</param>
+        /// <returns>Execution result.</returns>
+        Task<IEnumerable<T>> ExecuteAsEnumerableAsync(ODataFeedAnnotations annotations);
 
         /// <summary>
         /// Executes the OData function or action and returns scalar result.

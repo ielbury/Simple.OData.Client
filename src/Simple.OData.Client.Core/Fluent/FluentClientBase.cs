@@ -556,6 +556,7 @@ namespace Simple.OData.Client
                 _client.ExecuteAsEnumerableAsync(_command, CancellationToken.None),
                 _command.SelectedColumns, _command.DynamicPropertiesContainerName);
         }
+
         /// <summary>
         /// Executes the OData function or action and returns enumerable result.
         /// </summary>
@@ -565,6 +566,33 @@ namespace Simple.OData.Client
         {
             return FilterAndTypeColumnsAsync(
                 _client.ExecuteAsEnumerableAsync(_command, cancellationToken),
+                _command.SelectedColumns, _command.DynamicPropertiesContainerName);
+        }
+
+        /// <summary>
+        /// Executes the OData function or action and returns enumerable result.
+        /// </summary>
+        /// <param name="annotations">The OData feed annotations.</param>
+        /// <param name="cancellationToken">The cancellation token.</param>
+        /// <returns>Execution result.</returns>
+        public Task<IEnumerable<T>> ExecuteAsEnumerableAsync(ODataFeedAnnotations annotations, CancellationToken cancellationToken)
+        {
+            var command = _command.WithCount().Resolve(_session);
+            return FilterAndTypeColumnsAsync(
+                _client.ExecuteAsEnumerableAsync(_command, annotations, cancellationToken),
+                _command.SelectedColumns, _command.DynamicPropertiesContainerName);
+        }
+
+        /// <summary>
+        /// Executes the OData function or action and returns enumerable result.
+        /// </summary>
+        /// <param name="annotations">The OData feed annotations.</param>
+        /// <returns>Execution result.</returns>
+        public Task<IEnumerable<T>> ExecuteAsEnumerableAsync(ODataFeedAnnotations annotations)
+        {
+            var command = _command.WithCount().Resolve(_session);
+            return FilterAndTypeColumnsAsync(
+                _client.ExecuteAsEnumerableAsync(_command, annotations, CancellationToken.None),
                 _command.SelectedColumns, _command.DynamicPropertiesContainerName);
         }
 
@@ -760,7 +788,6 @@ namespace Simple.OData.Client
                                 .Any(y => IsSelectedColumn(y, string.Join("/", items.Skip(1))))));
             }
         }
-
 #pragma warning restore 1591
 
     }

@@ -59,12 +59,14 @@ namespace Simple.OData.Client
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>Entries found with entry count.</returns>
         Task<IEnumerable<T>> FindEntriesAsync(ODataFeedAnnotations annotations, CancellationToken cancellationToken);
+
         /// <summary>
         /// Retrieves entries by executing OData GET request and assigns OData feed annotations.
         /// </summary>
         /// <param name="annotatedUri">The URI previously returned in OData feed annotations.</param>
         /// <param name="annotations">The OData feed annotations.</param>
         /// <returns>Entries found with entry count.</returns>
+        
         Task<IEnumerable<T>> FindEntriesAsync(Uri annotatedUri, ODataFeedAnnotations annotations);
         /// <summary>
         /// Retrieves entries by executing OData GET request and assigns OData feed annotations.
@@ -73,6 +75,7 @@ namespace Simple.OData.Client
         /// <param name="annotations">The OData feed annotations.</param>
         /// <param name="cancellationToken">The cancellation token.</param>
         /// <returns>Entries found with entry count.</returns>
+        
         Task<IEnumerable<T>> FindEntriesAsync(Uri annotatedUri, ODataFeedAnnotations annotations, CancellationToken cancellationToken);
 
         /// <summary>
