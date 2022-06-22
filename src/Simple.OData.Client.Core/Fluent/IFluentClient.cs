@@ -243,6 +243,17 @@ namespace Simple.OData.Client
         /// </summary>
         /// <param name="expression">The expression for the sort columns.</param>
         /// <returns>Self.</returns>
+        /// <summary>
+        /// Sorts the result by the specified columns in ascending order.
+        /// </summary>
+        /// <param name="columns">The sort columns.</param>
+        /// <returns>Self.</returns>
+        FT ThenBy(params string[] columns);
+        /// <summary>
+        /// Sorts the result by the specified columns in ascending order.
+        /// </summary>
+        /// <param name="columns">The sort columns.</param>
+        /// <returns>Self.</returns>
         FT ThenBy(Expression<Func<T, object>> expression);
         /// <summary>
         /// Sorts the result by the specified columns in descending order.
@@ -262,6 +273,12 @@ namespace Simple.OData.Client
         /// <param name="expression">The expression for the sort columns.</param>
         /// <returns>Self.</returns>
         FT OrderByDescending(Expression<Func<T, object>> expression);
+        /// <summary>
+        /// Sorts the result by the specified columns in ascending order.
+        /// </summary>
+        /// <param name="columns">The sort columns.</param>
+        /// <returns>Self.</returns>
+        FT ThenByDescending(params string[] columns);
         /// <summary>
         /// Sorts the result by the specified columns in descending order.
         /// </summary>

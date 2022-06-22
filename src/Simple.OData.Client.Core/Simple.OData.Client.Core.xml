@@ -773,6 +773,21 @@
             <param name="cancellationToken">The cancellation token.</param>
             <returns>Execution result.</returns>
         </member>
+        <member name="M:Simple.OData.Client.FluentClientBase`2.ExecuteAsEnumerableAsync(Simple.OData.Client.ODataFeedAnnotations,System.Threading.CancellationToken)">
+            <summary>
+            Executes the OData function or action and returns enumerable result.
+            </summary>
+            <param name="annotations">The OData feed annotations.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Execution result.</returns>
+        </member>
+        <member name="M:Simple.OData.Client.FluentClientBase`2.ExecuteAsEnumerableAsync(Simple.OData.Client.ODataFeedAnnotations)">
+            <summary>
+            Executes the OData function or action and returns enumerable result.
+            </summary>
+            <param name="annotations">The OData feed annotations.</param>
+            <returns>Execution result.</returns>
+        </member>
         <member name="M:Simple.OData.Client.FluentClientBase`2.ExecuteAsScalarAsync``1">
             <summary>
             Executes the OData function or action and returns scalar result.
@@ -1664,11 +1679,23 @@
             <param name="expression">The expression for the sort columns.</param>
             <returns>Self.</returns>
         </member>
-        <member name="M:Simple.OData.Client.IFluentClient`2.ThenBy(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+        <member name="M:Simple.OData.Client.IFluentClient`2.ThenBy(System.String[])">
             <summary>
             Sorts the result by the specified columns in ascending order.
             </summary>
             <param name="expression">The expression for the sort columns.</param>
+            <returns>Self.</returns>
+            <summary>
+            Sorts the result by the specified columns in ascending order.
+            </summary>
+            <param name="columns">The sort columns.</param>
+            <returns>Self.</returns>
+        </member>
+        <member name="M:Simple.OData.Client.IFluentClient`2.ThenBy(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
+            <summary>
+            Sorts the result by the specified columns in ascending order.
+            </summary>
+            <param name="columns">The sort columns.</param>
             <returns>Self.</returns>
         </member>
         <member name="M:Simple.OData.Client.IFluentClient`2.OrderByDescending(System.String[])">
@@ -1692,6 +1719,13 @@
             <param name="expression">The expression for the sort columns.</param>
             <returns>Self.</returns>
         </member>
+        <member name="M:Simple.OData.Client.IFluentClient`2.ThenByDescending(System.String[])">
+            <summary>
+            Sorts the result by the specified columns in ascending order.
+            </summary>
+            <param name="columns">The sort columns.</param>
+            <returns>Self.</returns>
+        </member>
         <member name="M:Simple.OData.Client.IFluentClient`2.ThenByDescending(System.Linq.Expressions.Expression{System.Func{`0,System.Object}})">
             <summary>
             Sorts the result by the specified columns in descending order.
@@ -1700,6 +1734,11 @@
             <returns>Self.</returns>
         </member>
         <member name="M:Simple.OData.Client.IFluentClient`2.QueryOptions(System.String)">
+            <summary>
+            Sorts the result by the specified columns in ascending order.
+            </summary>
+            <param name="columns">The sort columns.</param>
+            <returns>Self.</returns>
             <summary>
             Sets the custom query options.
             </summary>
@@ -1898,6 +1937,21 @@
             Executes the OData function or action and returns collection.
             </summary>
             <param name="cancellationToken">The cancellation token.</param>
+            <returns>Execution result.</returns>
+        </member>
+        <member name="M:Simple.OData.Client.IFluentClient`2.ExecuteAsEnumerableAsync(Simple.OData.Client.ODataFeedAnnotations,System.Threading.CancellationToken)">
+            <summary>
+            Executes the OData function or action and returns collection.
+            </summary>
+            <param name="annotations">The OData feed annotations.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Execution result.</returns>
+        </member>
+        <member name="M:Simple.OData.Client.IFluentClient`2.ExecuteAsEnumerableAsync(Simple.OData.Client.ODataFeedAnnotations)">
+            <summary>
+            Executes the OData function or action and returns collection.
+            </summary>
+            <param name="annotations">The OData feed annotations.</param>
             <returns>Execution result.</returns>
         </member>
         <member name="M:Simple.OData.Client.IFluentClient`2.ExecuteAsScalarAsync``1">

@@ -292,6 +292,12 @@ namespace Simple.OData.Client
             return this as FT;
         }
 
+        public FT ThenBy(params string[] columns)
+        {
+            this.Command.ThenBy(columns);
+            return this as FT;
+        }
+
         public FT OrderByDescending(params string[] columns)
         {
             this.Command.OrderByDescending(columns);
@@ -319,6 +325,12 @@ namespace Simple.OData.Client
         public FT ThenByDescending(Expression<Func<T, object>> expression)
         {
             this.Command.ThenByDescending(expression.ExtractColumnNames(_session.TypeCache).ToArray());
+            return this as FT;
+        }
+
+        public FT ThenByDescending(params string[] columns)
+        {
+            this.Command.ThenByDescending(columns);
             return this as FT;
         }
 
