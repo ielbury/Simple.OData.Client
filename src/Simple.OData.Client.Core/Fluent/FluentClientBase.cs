@@ -582,6 +582,34 @@ public abstract class FluentClientBase<T, FT> : IFluentClient<T, FT>
 	{
 		return _client.ExecuteAsScalarAsync<U>(_command, CancellationToken.None);
 	}
+
+	/// <summary>
+	/// Executes the OData function or action and returns enumerable result.
+	/// </summary>
+	/// <param name="annotations">The OData feed annotations.</param>
+	/// <param name="cancellationToken">The cancellation token.</param>
+	/// <returns>Execution result.</returns>
+	public Task<IEnumerable<T>> ExecuteAsEnumerableAsync(ODataFeedAnnotations annotations, CancellationToken cancellationToken)
+	{
+		var command = _command.WithCount().Resolve(_session);
+		return FilterAndTypeColumnsAsync(
+			_client.ExecuteAsEnumerableAsync(_command, annotations, cancellationToken),
+			_command.SelectedColumns, _command.DynamicPropertiesContainerName);
+	}
+
+	/// <summary>
+	/// Executes the OData function or action and returns enumerable result.
+	/// </summary>
+	/// <param name="annotations">The OData feed annotations.</param>
+	/// <returns>Execution result.</returns>
+	public Task<IEnumerable<T>> ExecuteAsEnumerableAsync(ODataFeedAnnotations annotations)
+	{
+		var command = _command.WithCount().Resolve(_session);
+		return FilterAndTypeColumnsAsync(
+			_client.ExecuteAsEnumerableAsync(_command, annotations, CancellationToken.None),
+			_command.SelectedColumns, _command.DynamicPropertiesContainerName);
+	}
+
 	/// <summary>
 	/// Executes the OData function or action and returns scalar result.
 	/// </summary>
