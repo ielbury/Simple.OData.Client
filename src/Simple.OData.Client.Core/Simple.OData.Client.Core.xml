@@ -1735,11 +1735,6 @@
         </member>
         <member name="M:Simple.OData.Client.IFluentClient`2.QueryOptions(System.String)">
             <summary>
-            Sorts the result by the specified columns in ascending order.
-            </summary>
-            <param name="columns">The sort columns.</param>
-            <returns>Self.</returns>
-            <summary>
             Sets the custom query options.
             </summary>
             <param name="queryOptions">The custom query options string.</param>
