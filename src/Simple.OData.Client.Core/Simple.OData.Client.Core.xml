@@ -779,6 +779,21 @@
             </summary>
             <returns>Execution result.</returns>
         </member>
+        <member name="M:Simple.OData.Client.FluentClientBase`2.ExecuteAsEnumerableAsync(Simple.OData.Client.ODataFeedAnnotations,System.Threading.CancellationToken)">
+            <summary>
+            Executes the OData function or action and returns enumerable result.
+            </summary>
+            <param name="annotations">The OData feed annotations.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Execution result.</returns>
+        </member>
+        <member name="M:Simple.OData.Client.FluentClientBase`2.ExecuteAsEnumerableAsync(Simple.OData.Client.ODataFeedAnnotations)">
+            <summary>
+            Executes the OData function or action and returns enumerable result.
+            </summary>
+            <param name="annotations">The OData feed annotations.</param>
+            <returns>Execution result.</returns>
+        </member>
         <member name="M:Simple.OData.Client.FluentClientBase`2.ExecuteAsScalarAsync``1(System.Threading.CancellationToken)">
             <summary>
             Executes the OData function or action and returns scalar result.
@@ -1898,6 +1913,21 @@
             Executes the OData function or action and returns collection.
             </summary>
             <param name="cancellationToken">The cancellation token.</param>
+            <returns>Execution result.</returns>
+        </member>
+        <member name="M:Simple.OData.Client.IFluentClient`2.ExecuteAsEnumerableAsync(Simple.OData.Client.ODataFeedAnnotations,System.Threading.CancellationToken)">
+            <summary>
+            Executes the OData function or action and returns collection.
+            </summary>
+            <param name="annotations">The OData feed annotations.</param>
+            <param name="cancellationToken">The cancellation token.</param>
+            <returns>Execution result.</returns>
+        </member>
+        <member name="M:Simple.OData.Client.IFluentClient`2.ExecuteAsEnumerableAsync(Simple.OData.Client.ODataFeedAnnotations)">
+            <summary>
+            Executes the OData function or action and returns collection.
+            </summary>
+            <param name="annotations">The OData feed annotations.</param>
             <returns>Execution result.</returns>
         </member>
         <member name="M:Simple.OData.Client.IFluentClient`2.ExecuteAsScalarAsync``1">
